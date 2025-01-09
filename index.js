@@ -32,6 +32,13 @@ app.use('/api/users', userRoutes);
 app.use('/api/complaints', complaintRoutes);
 
 
+pp.get('/', (req, res) => {
+  res.send('Hello from your server!'); 
+  // Or render an initial HTML page if you have a frontend
+});
+
+
+
 // Database Connection
 
 const uri = "mongodb+srv://ssshhhh005:sam123sung@firstcluster.6x1wy.mongodb.net/full-mern-stack-jwt?retryWrites=true&w=majority";
