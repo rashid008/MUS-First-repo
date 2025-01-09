@@ -32,7 +32,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/complaints', complaintRoutes);
 
 
-pp.get('/', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Hello from your server!'); 
   // Or render an initial HTML page if you have a frontend
 });
