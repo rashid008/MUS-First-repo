@@ -33,15 +33,9 @@ app.use('/api/complaints', complaintRoutes);
 
 //Adding lines for koyeb 
 // Default route for root path
-app.get('/', (req, res) => {
-  res.send('Welcome to the application. Use /api/users or /api/complaints for API routes.');
-});
-
-// Serve index.html for any other route
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
-
 
 
 // Database Connection
