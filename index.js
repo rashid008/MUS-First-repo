@@ -31,12 +31,6 @@ app.use(express.static("uploads")); // Serve uploaded files statically
 app.use('/api/users', userRoutes);
 app.use('/api/complaints', complaintRoutes);
 
-//Adding lines for koyeb 
-// Default route for root path
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
 
 // Database Connection
 
