@@ -26,6 +26,20 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static("uploads")); // Serve uploaded files statically
 
+//Adding lines for koyeb 
+// Default route for root path
+app.get('/', (req, res) => {
+  res.send('Welcome to the application. Use /api/users or /api/complaints for API routes.');
+});
+
+// Serve index.html for any other route
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+
+
+
 // Routes
 app.use('/api/users', userRoutes);
 app.use('/api/complaints', complaintRoutes);
