@@ -37,6 +37,9 @@ app.get('/', (req, res) => {
   // Or render an initial HTML page if you have a frontend
 });
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 
 // Database Connection
