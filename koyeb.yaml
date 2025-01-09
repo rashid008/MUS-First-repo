@@ -1,10 +1,8 @@
-services:
-  - name: react-node-app
-    build:
-      context: .
-    instances: 1
-    env:
-      - name: NODE_ENV
-        value: "production"
-    ports:
-      - 1337  # The port your server listens to
+name: my-app
+type: web
+build:
+  commands:
+    - npm install
+    - npm run build
+run:
+  command: npm start
