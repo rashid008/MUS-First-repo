@@ -16,7 +16,6 @@ const multer = require("multer");
 const path = require('path');
 const port = process.env.PORT || 1337;
 
-const cors = require('cors');
 
 app.use(
     cors({
