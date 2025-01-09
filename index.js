@@ -26,6 +26,11 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static("uploads")); // Serve uploaded files statically
 
+
+// Routes
+app.use('/api/users', userRoutes);
+app.use('/api/complaints', complaintRoutes);
+
 //Adding lines for koyeb 
 // Default route for root path
 app.get('/', (req, res) => {
@@ -38,11 +43,6 @@ app.get('*', (req, res) => {
 });
 
 
-
-
-// Routes
-app.use('/api/users', userRoutes);
-app.use('/api/complaints', complaintRoutes);
 
 // Database Connection
 
