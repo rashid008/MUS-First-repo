@@ -20,7 +20,7 @@ function Login({ setUserRole }) {
 
     try {
         // Fetch API call to the backend
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/login`, { 
+        const response = await fetch(`/api/login`, { 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
