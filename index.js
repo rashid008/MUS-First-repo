@@ -16,11 +16,18 @@ const multer = require("multer");
 const path = require('path');
 const port = process.env.PORT || 1337;
 
-app.use(cors({
-    origin: 'https://your-frontend-url.koyeb.app', // Replace with your frontend Koyeb URL
-    methods: 'GET, POST, PUT, DELETE',
-    credentials: true
-}));
+const cors = require('cors');
+
+app.use(
+    cors({
+        origin: [
+            'https://victorious-calida-deadlycompliance420-43020d44.koyeb.app', // Replace with your Koyeb frontend URL
+            'http://localhost:3000', // For local testing
+        ],
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        credentials: true,
+    })
+);
 
 
 
