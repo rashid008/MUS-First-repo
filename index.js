@@ -25,6 +25,7 @@ const port = process.env.PORT || 1337;
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static("uploads")); // Serve uploaded files statically
+app.use(express.static(path.join(__dirname, 'build'))); // Serve React build folder statically
 
 
 // Routes
