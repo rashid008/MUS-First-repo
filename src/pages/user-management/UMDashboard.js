@@ -69,9 +69,9 @@ const handleAddUserInputChange = (e) => {
   useEffect(() => {
     const fetchUsersAndAdmins = async () => {
       try {
-        const userResponse = await axios.get('http://localhost:1337/api/admin/approved-users');
-        const adminResponse = await axios.get('http://localhost:1337/api/admin/admins');
-        const pendingUserResponse = await axios.get('http://localhost:1337/api/admin/pending-users'); // Fetch pending users
+        const userResponse = await axios.get('/api/admin/approved-users');
+        const adminResponse = await axios.get('/api/admin/admins');
+        const pendingUserResponse = await axios.get('/api/admin/pending-users'); // Fetch pending users
   
         setUsers(userResponse.data.users.filter((user) => user.role === 'user')); // Only regular users
         setAdmins(adminResponse.data.admins);
@@ -100,7 +100,7 @@ const handleAddUserInputChange = (e) => {
   // Handle delete user
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:1337/api/admin/users/${id}`);
+      await axios.delete(`/api/admin/users/${id}`);
       setUsers((prevUsers) => prevUsers.filter((user) => user._id !== id));
     } catch (error) {
       console.error('Error deleting user:', error);
@@ -119,7 +119,7 @@ const handleAddUserInputChange = (e) => {
         name: selectedUser.name,
         email: selectedUser.email,
       };
-      await axios.put(`http://localhost:1337/api/admin/users/${selectedUser._id}`, updatedUser); // Update user in the database
+      await axios.put(`/api/admin/users/${selectedUser._id}`, updatedUser); // Update user in the database
       setUsers((prevUsers) =>
         prevUsers.map((user) =>
           user._id === selectedUser._id ? updatedUser : user
@@ -142,7 +142,7 @@ const handleAddUserInputChange = (e) => {
   };
   const handleApprove = async (userId) => {
     try {
-      await axios.put(`http://localhost:1337/api/admin/approve-user/${userId}`);  // Approve the user
+      await axios.put('/api/admin/approve-user/${userId}`);  // Approve the user
       setPendingUsers((prevPending) => prevPending.filter((user) => user._id !== userId));  // Remove from pending list
     } catch (error) {
       console.error('Error approving user:', error);
@@ -151,7 +151,7 @@ const handleAddUserInputChange = (e) => {
   
   const handleReject = async (userId) => {
     try {
-      await axios.delete(`http://localhost:1337/api/admin/reject-user/${userId}`);  // Reject the user
+      await axios.delete(`/api/admin/reject-user/${userId}`);  // Reject the user
       setPendingUsers((prevPending) => prevPending.filter((user) => user._id !== userId));  // Remove from pending list
     } catch (error) {
       console.error('Error rejecting user:', error);
