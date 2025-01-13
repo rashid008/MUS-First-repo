@@ -26,7 +26,7 @@ const CMDashboard = () => {
 
   // Fetch complaints from the API
   useEffect(() => {
-    Axios.get('/api/complaints')
+    Axios.get('https://rude-andrei-deadlycompliance420-98f4d407.koyeb.app/api/complaints')
       .then((response) => {
         setComplaints(response.data);  // Assuming the response data contains an array of complaints
       })
