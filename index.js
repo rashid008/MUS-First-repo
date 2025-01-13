@@ -47,12 +47,16 @@ app.use('/api/users', userRoutes);
 app.use('/api/complaints', complaintRoutes);
 
 
+// Root endpoint (optional)
 app.get('/', (req, res) => {
-  res.send('Hello from your server!'); 
-  // Or render an initial HTML page if you have a frontend
+  res.send('Hello from your server!');
 });
 
-app.get('*', (req, res) => {
+// Handle non-API routes to serve React app
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api')) {
+    return next(); // Skip serving React for API routes
+  }
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
