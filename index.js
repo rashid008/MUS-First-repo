@@ -24,7 +24,7 @@ app.use(
     cors({
         origin: [
             'https://victorious-calida-deadlycompliance420-43020d44.koyeb.app', // Frontend URL on Koyeb
-            'http://localhost:3000', // For local testing
+            'http://localhost:1337', // For local testing
         ],
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         credentials: true,
