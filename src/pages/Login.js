@@ -20,7 +20,7 @@ function Login({ setUserRole }) {
 
     try {
         // Fetch API call to the backend
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/login`, { 
+        const response = await fetch('https://rude-andrei-deadlycompliance420-98f4d407.koyeb.app/api/login', { 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
