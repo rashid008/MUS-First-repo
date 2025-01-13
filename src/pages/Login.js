@@ -20,7 +20,7 @@ function Login({ setUserRole }) {
 
     try {
         // Fetch API call to the backend
-        const response = await fetch(`https://victorious-calida-deadlycompliance420-43020d44.koyeb.app/api/login`, { 
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/login`, { 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
