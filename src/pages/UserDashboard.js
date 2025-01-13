@@ -47,7 +47,7 @@ const UserDashboard = () => {
     const fetchProfileData = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('https://rude-andrei-deadlycompliance420-98f4d407.koyeb.app/api/profile-data', {
+            const response = await fetch('/api/profile-data', {
                 headers: { 'x-access-token': token },
             });
             const data = await response.json();
@@ -64,7 +64,7 @@ const UserDashboard = () => {
     const saveProfileChanges = async () => {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch('https://rude-andrei-deadlycompliance420-98f4d407.koyeb.app/api/profile', {
+        const response = await fetch('/api/profile', {
             method: 'PUT',
             headers: {
                 'x-access-token': token,
@@ -87,7 +87,7 @@ const UserDashboard = () => {
 
     async function fetchQuote() {
         try {
-            const response = await fetch('https://rude-andrei-deadlycompliance420-98f4d407.koyeb.app/api/quote', {
+            const response = await fetch('/api/quote', {
                 headers: {
                     'x-access-token': localStorage.getItem('token'),
                 },
@@ -115,7 +115,7 @@ const UserDashboard = () => {
         }
 
         try {
-            const req = await fetch('https://rude-andrei-deadlycompliance420-98f4d407.koyeb.app/api/quote', {
+            const req = await fetch('/api/quote', {
                 method: 'POST',
                 headers: {
                     'x-access-token': localStorage.getItem('token'),
@@ -145,7 +145,7 @@ const UserDashboard = () => {
             const updatedQuotes = quotes.filter(q => q !== quoteToDelete);
             setQuotes(updatedQuotes);
 
-            await fetch('https://rude-andrei-deadlycompliance420-98f4d407.koyeb.app/api/quote', {
+            await fetch('/api/quote', {
                 method: 'DELETE',
                 headers: {
                     'x-access-token': localStorage.getItem('token'),
@@ -164,7 +164,7 @@ const UserDashboard = () => {
         setQuotes(updatedQuotes);
 
         try {
-            await fetch('https://rude-andrei-deadlycompliance420-98f4d407.koyeb.app/api/quote', {
+            await fetch('/api/quote', {
                 method: 'PUT',
                 headers: {
                     'x-access-token': localStorage.getItem('token'),
