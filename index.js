@@ -17,13 +17,14 @@ const path = require('path');
 const port = process.env.PORT || 1337;
 
 
-app.use(
-    cors({
-        origin: '*',
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        credentials: true,
-    })
-);
+app.use(express.json());
+
+// CORS (optional if frontend and backend are on the same domain)
+app.use(cors({
+    origin: '*', // Allow all origins if deployed together
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+}));
 
 
 
