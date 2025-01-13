@@ -20,11 +20,17 @@ const port = process.env.PORT || 1337;
 app.use(express.json());
 
 // CORS (optional if frontend and backend are on the same domain)
-app.use(cors({
-    origin: '*', // Allow all origins if deployed together
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
-}));
+app.use(
+    cors({
+        origin: [
+            'https://victorious-calida-deadlycompliance420-43020d44.koyeb.app', // Frontend URL on Koyeb
+            'http://localhost:3000', // For local testing
+        ],
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        credentials: true,
+    })
+);
+
 
 
 
