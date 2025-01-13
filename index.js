@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(
     cors({
         origin: [
-            'https://victorious-calida-deadlycompliance420-43020d44.koyeb.app', // Frontend URL on Koyeb
+            'https://rude-andrei-deadlycompliance420-98f4d407.koyeb.app/', // Frontend URL on Koyeb
             'http://localhost:1337', // For local testing
         ],
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
