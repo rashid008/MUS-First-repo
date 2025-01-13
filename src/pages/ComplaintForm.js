@@ -128,7 +128,7 @@ const ComplaintForm = () => {
   
     // Submit data to the backend
     try {
-      const response = await fetch("/api/complaints", {
+      const response = await fetch("https://rude-andrei-deadlycompliance420-98f4d407.koyeb.app/api/complaints", {
         method: "POST",
         body: submissionData,
       });
